@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            background-image: url('image6.jpg'); 
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        h1 {
+            padding: 50px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            background-color: #4CAF50;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>THANK YOU FOR VISITING</h1>
+    <a onclick="redirectToLogin()">logout</a>
+
+    <script>
+        function redirectToLogin() {
+            window.location.href = 'login.php';
+        }
+    </script>
+</body>
+</html>

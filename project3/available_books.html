@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color:blue;
+            background-image:url('image5.jpg');
+            background-size:cover;
+            margin: 0; 
+            padding: 0;
+        }
+        .books-container {
+            max-width: 600px;
+            margin: 50px auto; 
+            padding: 20px;
+            border-radius: 10px;
+        }
+        table {
+            width: 100%;
+            margin-top: 30px;
+            color:red;
+        }
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="books-container">
+        <h1>Available Books</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Internet programming</td>
+                    <td>Douglas Crockford</td>
+                </tr>
+                <tr>
+                    <td>Java programming</td>
+                    <td>James Gosling</td>
+                </tr>
+                <tr>
+                    <td>Python programming</td>
+                    <td>Guido van Rossum</td>
+                </tr>
+                 <tr>
+                    <td>C programming</td>
+                    <td>Brian Kernighan</td>
+                </tr>
+                <tr>
+                    <td>C# programming</td>
+                    <td>Bjarne Stroustrup</td>
+                </tr>
+                 <tr>
+                    <td>PHP programming</td>
+                    <td>Erich Gamma</td>
+                </tr>
+                
+            </tbody>
+        </table>
+         <form id="addBookForm">
+            <label for="bookTitle">Enter Book Title:</label>
+            <input type="text" id="bookTitle" name="bookTitle" required>
+            <button type="button" onclick="addBook()">Add Book</button>
+<br>
+           
+             <a href="logout.html">NEXT</a>
+        </form>
+</div>
+<script>
+        function addBook() {
+            var bookTitle = document.getElementById('bookTitle').value;
+
+            if (bookTitle.trim() === "") {
+                alert("Please enter a book title.");
+                return;
+            }
+
+            // Add the new book to the table
+            var table = document.querySelector('table tbody');
+            var newRow = table.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            cell1.innerHTML = bookTitle;
+            cell2.innerHTML = "Unknown Author"; 
+
+            document.getElementById('bookTitle').value = "";
+        }
+        function logout() {
+            // You can implement your logout logic here
+            alert("Logout successful!");
+    </script>
+</body>
+</html>
